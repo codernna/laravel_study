@@ -8,6 +8,6 @@ class Article extends Model
 {
     protected $table = 'articles';
     protected $fillable = [
-        'title', 'body'
+        'title', 'body', 'image'
     ];
 }

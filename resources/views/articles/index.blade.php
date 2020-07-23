@@ -8,9 +8,15 @@
 	<div class="row">
 		<div class="card mb-2">
 	<div class="card-body">
+
 		<div class="col-sm-6">
 		<h5>{{ $article->title }} </h5>
+		<div class="col-sm-6">
+		<img src="{{ asset('uploads/article/'. $article->image)}}" width="200px" height="200px" alt="image">
+			
 		</div>
+		</div>
+
 		
 		<div class="col-sm-6">
 			<p> {{ $article->body }} </p>

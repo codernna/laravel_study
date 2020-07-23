@@ -37,12 +37,26 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $article = new Article;
         $article->title = request()->title;
         $article->body  = request()->body;
         $article->category_id = request()->category_id;
+        
+
+        if($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.'. $extension;
+            $file->move('uploads/article', $filename);
+            $article->image = $filename;
+            
+            }else {
+            return $request;
+            $article->image = '';
+
+        }
         $article->save();
 
         return redirect('/articles');

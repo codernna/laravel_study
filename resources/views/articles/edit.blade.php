@@ -26,7 +26,7 @@
 		
 		<div class="form-group">
 		<label>Body</label>
-		<input value="{{$article->body}}" type="text"  name="body"  class="form-control" >
+		<textarea  type="text"  name="body"  class="form-control">{{$article->body}}</textarea> 
 		</div>
 
 		<div class="form-group">
@@ -34,12 +34,11 @@
 		<select class="form-control" name="category_id">
 			
 			
-			<option value="">
+			<option value="Default Value">Default Value</option>
+			<option value="News">News</option>
+			<option value="Tech">Tech</option>
+			
 				
-			</option>
-	
-			
-			
 		</select>
 		</div>
 		
